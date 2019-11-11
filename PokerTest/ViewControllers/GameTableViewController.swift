@@ -13,7 +13,8 @@ import RealmSwift
 class GameTableViewController: UITableViewController {
     @IBOutlet weak var dealerBettingLabel:UILabel!
     @IBOutlet weak var dealerDack:CardDackView!
-        
+    @IBOutlet weak var autoPlaySwitch: UISwitch!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadDealerData()
@@ -49,9 +50,32 @@ class GameTableViewController: UITableViewController {
     }
     
     @IBAction func onTouchupNewGame(_ sender: UIButton) {
+        play()
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        performSegue(withIdentifier: "showGameHistory", sender: players[indexPath.row].id)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? GameHistoryTableViewController {
+            vc.playerId = sender as? String ?? ""
+        }
+    }
+    
+    @IBAction func onChangeSwitch(_ sender: UISwitch) {
+        if sender.isOn {
+            play()
+        }
+    }
+    
+    func play() {
         guard let d = Dealer.shared.dealer else {
             return
         }
+
         let realm = try! Realm()
         realm.beginWrite()
         d.initGame()
@@ -67,17 +91,10 @@ class GameTableViewController: UITableViewController {
         loadDealerData()
         tableView.reloadData()
         dealerDack.refresh()
-    }
-    
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        performSegue(withIdentifier: "showGameHistory", sender: players[indexPath.row].id)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let vc = segue.destination as? GameHistoryTableViewController {
-            vc.playerId = sender as? String ?? ""
+        if autoPlaySwitch.isOn {
+            DispatchQueue.main.asyncAfter(deadline: .now() + .microseconds(1)) {
+                self.play()
+            }
         }
     }
 }

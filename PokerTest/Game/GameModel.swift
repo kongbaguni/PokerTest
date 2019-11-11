@@ -14,6 +14,7 @@ class GameModel: Object {
     @objc dynamic var playerId = ""
     @objc dynamic var regDT = Date()
     @objc dynamic var bettingMoney = 0
+    @objc dynamic var gameResultRawValue:Int = -1
     private var cards = List<CardModel>()
     
     func insertCartd(cards: [Dealer.Card]) {
@@ -21,6 +22,7 @@ class GameModel: Object {
             let model = c.model
             self.cards.append(model)
         }
+        gameResultRawValue = gameResultValue.rawValue
     }
     
     override static func primaryKey() -> String? {
@@ -68,6 +70,9 @@ class GameModel: Object {
     
     /** 족보판정*/
     var gameResultValue:CardValue {
+        if let result = CardValue(rawValue: gameResultRawValue) {
+            return result
+        }
         var tcards:[Dealer.Card] = []
         for card in cards {
             if let c = card.cardValue {
@@ -77,7 +82,7 @@ class GameModel: Object {
         if tcards.count == 5 {
             let a = tcards.sorted { (a, b) -> Bool in
                 return a.index > b.index
-            }
+            }
             
             var check:[Int] = []
             var types = Set<String>()

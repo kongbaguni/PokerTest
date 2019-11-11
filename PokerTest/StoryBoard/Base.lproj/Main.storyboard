@@ -268,6 +268,12 @@
                                     <color key="textColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="vRP-AT-fZu">
+                                    <rect key="frame" x="10" y="109" width="51" height="31"/>
+                                    <connections>
+                                        <action selector="onChangeSwitch:" destination="jqV-tI-Ixs" eventType="valueChanged" id="cG8-3S-Cts"/>
+                                    </connections>
+                                </switch>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
@@ -276,8 +282,10 @@
                                 <constraint firstItem="gGD-ev-syp" firstAttribute="top" secondItem="aVo-4U-DFK" secondAttribute="top" constant="10" id="P6a-To-xFU"/>
                                 <constraint firstItem="iFw-PU-uax" firstAttribute="top" secondItem="aVo-4U-DFK" secondAttribute="top" constant="50" id="SwK-zO-sW1"/>
                                 <constraint firstItem="iFw-PU-uax" firstAttribute="leading" secondItem="aVo-4U-DFK" secondAttribute="leading" id="Wu7-Dd-i43"/>
+                                <constraint firstItem="vRP-AT-fZu" firstAttribute="leading" secondItem="aVo-4U-DFK" secondAttribute="leading" constant="10" id="dK4-x2-nKT"/>
                                 <constraint firstItem="Q11-Gk-AL5" firstAttribute="leading" secondItem="gGD-ev-syp" secondAttribute="trailing" constant="15" id="kj4-OR-5uk"/>
                                 <constraint firstAttribute="trailing" secondItem="iFw-PU-uax" secondAttribute="trailing" id="rFe-P2-ehl"/>
+                                <constraint firstAttribute="bottom" secondItem="vRP-AT-fZu" secondAttribute="bottom" constant="10" id="tHI-qw-TyD"/>
                                 <constraint firstAttribute="trailing" secondItem="Q11-Gk-AL5" secondAttribute="trailing" constant="15" id="x0f-ya-boc"/>
                                 <constraint firstItem="Q11-Gk-AL5" firstAttribute="top" secondItem="aVo-4U-DFK" secondAttribute="top" constant="10" id="zk5-IT-mHI"/>
                             </constraints>
@@ -355,6 +363,7 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="game" image="doc.fill" catalog="system" id="hxn-ve-Eag"/>
                     <connections>
+                        <outlet property="autoPlaySwitch" destination="vRP-AT-fZu" id="Q3A-2p-Yw3"/>
                         <outlet property="dealerBettingLabel" destination="Q11-Gk-AL5" id="vth-Uq-0Hs"/>
                         <outlet property="dealerDack" destination="iFw-PU-uax" id="XK9-KJ-Oye"/>
                         <segue destination="t3A-Si-A4h" kind="show" identifier="showGameHistory" id="gp3-uG-aUT"/>
