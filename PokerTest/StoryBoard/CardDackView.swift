@@ -75,4 +75,5 @@ class CardDackView : UIView {
             setDefaultImage()
         }
     }
+
 }

@@ -53,17 +53,17 @@ class GameModel: Object {
     }
 
     /** 카드 족보*/
-    enum CardValue:String {
-        case highcard = "Highcard"
-        case onePair = "One Pair"
-        case twoPairs = "Two pair"
-        case threeOfaKind = "Three of a kind"
-        case straight = "Straight"
-        case flush = "Flush"
-        case fullHouse = "Full house"
-        case fourOfaKind = "Four of a kind"
-        case straightFlush = "Straight flush"
-        case fiveOfaKind = "Five of a kind"
+    enum CardValue:Int {
+        case highcard = 0
+        case onePair = 1
+        case twoPairs = 2
+        case threeOfaKind = 3
+        case straight = 4
+        case flush = 5
+        case fullHouse = 6
+        case fourOfaKind = 7
+        case straightFlush = 8
+        case fiveOfaKind = 9
     }
     
     /** 족보판정*/

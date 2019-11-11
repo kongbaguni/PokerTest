@@ -247,20 +247,23 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dealer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gGD-ev-syp">
-                                    <rect key="frame" x="15" y="10" width="50" height="20.5"/>
+                                    <rect key="frame" x="15" y="10" width="80" height="20.5"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="80" id="lba-QN-2aA"/>
+                                    </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iFw-PU-uax" customClass="CardDackView" customModule="PokerTest">
-                                    <rect key="frame" x="114" y="0.0" width="300" height="128"/>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <rect key="frame" x="0.0" y="50" width="414" height="78"/>
+                                    <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="300" id="jOv-Kf-Htr"/>
                                     </constraints>
                                 </view>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q11-Gk-AL5">
-                                    <rect key="frame" x="15" y="35.5" width="89" height="20.5"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q11-Gk-AL5">
+                                    <rect key="frame" x="110" y="10" width="289" height="20.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
@@ -269,18 +272,18 @@
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="iFw-PU-uax" secondAttribute="bottom" id="01j-g1-4aN"/>
-                                <constraint firstItem="gGD-ev-syp" firstAttribute="leading" secondItem="aVo-4U-DFK" secondAttribute="leading" constant="15" id="FeQ-xE-qYf"/>
-                                <constraint firstItem="Q11-Gk-AL5" firstAttribute="top" secondItem="gGD-ev-syp" secondAttribute="bottom" constant="5" id="LTw-OL-ps6"/>
-                                <constraint firstItem="iFw-PU-uax" firstAttribute="top" secondItem="aVo-4U-DFK" secondAttribute="top" id="SwK-zO-sW1"/>
-                                <constraint firstItem="iFw-PU-uax" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gGD-ev-syp" secondAttribute="trailing" constant="8" symbolic="YES" id="Wfj-ty-ryq"/>
-                                <constraint firstItem="iFw-PU-uax" firstAttribute="leading" secondItem="Q11-Gk-AL5" secondAttribute="trailing" constant="10" id="kG7-OQ-mMV"/>
-                                <constraint firstItem="Q11-Gk-AL5" firstAttribute="leading" secondItem="aVo-4U-DFK" secondAttribute="leading" constant="15" id="lJz-yy-NGT"/>
+                                <constraint firstItem="gGD-ev-syp" firstAttribute="leading" secondItem="aVo-4U-DFK" secondAttribute="leading" constant="15" id="NEq-T5-Dyd"/>
+                                <constraint firstItem="gGD-ev-syp" firstAttribute="top" secondItem="aVo-4U-DFK" secondAttribute="top" constant="10" id="P6a-To-xFU"/>
+                                <constraint firstItem="iFw-PU-uax" firstAttribute="top" secondItem="aVo-4U-DFK" secondAttribute="top" constant="50" id="SwK-zO-sW1"/>
+                                <constraint firstItem="iFw-PU-uax" firstAttribute="leading" secondItem="aVo-4U-DFK" secondAttribute="leading" id="Wu7-Dd-i43"/>
+                                <constraint firstItem="Q11-Gk-AL5" firstAttribute="leading" secondItem="gGD-ev-syp" secondAttribute="trailing" constant="15" id="kj4-OR-5uk"/>
                                 <constraint firstAttribute="trailing" secondItem="iFw-PU-uax" secondAttribute="trailing" id="rFe-P2-ehl"/>
-                                <constraint firstItem="gGD-ev-syp" firstAttribute="top" secondItem="aVo-4U-DFK" secondAttribute="top" constant="10" id="s2a-au-Mnh"/>
+                                <constraint firstAttribute="trailing" secondItem="Q11-Gk-AL5" secondAttribute="trailing" constant="15" id="x0f-ya-boc"/>
+                                <constraint firstItem="Q11-Gk-AL5" firstAttribute="top" secondItem="aVo-4U-DFK" secondAttribute="top" constant="10" id="zk5-IT-mHI"/>
                             </constraints>
                         </view>
                         <view key="tableFooterView" contentMode="scaleToFill" id="bLE-r7-8Od">
-                            <rect key="frame" x="0.0" y="284" width="414" height="44"/>
+                            <rect key="frame" x="0.0" y="384" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xxF-Pt-vkU">
@@ -300,11 +303,11 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="player" rowHeight="100" id="EWA-f0-RQd" customClass="GameTableViewCell" customModule="PokerTest" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="156" width="414" height="100"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="player" rowHeight="200" id="EWA-f0-RQd" customClass="GameTableViewCell" customModule="PokerTest" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="156" width="414" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EWA-f0-RQd" id="stg-bR-wvN">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="홍길동" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FXm-qv-Tvo">
@@ -314,29 +317,28 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ox-1u-JMd" customClass="CardDackView" customModule="PokerTest" customModuleProvider="target">
-                                            <rect key="frame" x="114" y="0.0" width="300" height="100"/>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <rect key="frame" x="0.0" y="50" width="414" height="150"/>
+                                            <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="300" id="7kO-L9-MgT"/>
                                             </constraints>
                                         </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="500" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kTc-EJ-Pbm">
-                                            <rect key="frame" x="20" y="36.5" width="84" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="500" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kTc-EJ-Pbm">
+                                            <rect key="frame" x="373" y="10" width="31" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="5Ox-1u-JMd" firstAttribute="top" secondItem="stg-bR-wvN" secondAttribute="top" id="1vX-c0-IPw"/>
+                                        <constraint firstItem="5Ox-1u-JMd" firstAttribute="top" secondItem="stg-bR-wvN" secondAttribute="top" constant="50" id="1vX-c0-IPw"/>
+                                        <constraint firstAttribute="trailing" secondItem="kTc-EJ-Pbm" secondAttribute="trailing" constant="10" id="5Ah-eb-xna"/>
                                         <constraint firstAttribute="bottom" secondItem="5Ox-1u-JMd" secondAttribute="bottom" id="6a5-ns-1lf"/>
                                         <constraint firstAttribute="trailing" secondItem="5Ox-1u-JMd" secondAttribute="trailing" id="6mz-a5-f7j"/>
-                                        <constraint firstItem="kTc-EJ-Pbm" firstAttribute="leading" secondItem="stg-bR-wvN" secondAttribute="leadingMargin" id="Mn8-yc-0eN"/>
-                                        <constraint firstItem="5Ox-1u-JMd" firstAttribute="leading" secondItem="kTc-EJ-Pbm" secondAttribute="trailing" constant="10" id="Pgx-e3-JRB"/>
-                                        <constraint firstItem="5Ox-1u-JMd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="FXm-qv-Tvo" secondAttribute="trailing" constant="8" symbolic="YES" id="ZYu-45-C81"/>
                                         <constraint firstItem="FXm-qv-Tvo" firstAttribute="top" secondItem="stg-bR-wvN" secondAttribute="topMargin" id="d40-cF-Qfc"/>
                                         <constraint firstItem="FXm-qv-Tvo" firstAttribute="leading" secondItem="stg-bR-wvN" secondAttribute="leadingMargin" id="dsi-HP-7jc"/>
-                                        <constraint firstItem="kTc-EJ-Pbm" firstAttribute="top" secondItem="FXm-qv-Tvo" secondAttribute="bottom" constant="5" id="xIO-LD-bhV"/>
+                                        <constraint firstItem="kTc-EJ-Pbm" firstAttribute="top" secondItem="stg-bR-wvN" secondAttribute="top" constant="10" id="g0j-sf-H6G"/>
+                                        <constraint firstItem="5Ox-1u-JMd" firstAttribute="leading" secondItem="stg-bR-wvN" secondAttribute="leading" id="ngC-BM-WZt"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>

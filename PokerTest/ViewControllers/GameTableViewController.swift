@@ -44,7 +44,7 @@ class GameTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 150
     }
     
     @IBAction func onTouchupNewGame(_ sender: UIButton) {
@@ -68,7 +68,7 @@ class GameTableViewController: UITableViewController {
         if dealerDack.fliped {
             dealerDack.flip()
         }
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
             self.dealerDack.flip()
         }
     }

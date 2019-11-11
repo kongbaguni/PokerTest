@@ -31,7 +31,35 @@ class GameTableViewCell : UITableViewCell {
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
             self.dack.flip()
+            let realm = try! Realm()
+            if
+                let dealar = realm.objects(DealerModel.self).first,
+                let player = realm.object(ofType: PlayerModel.self, forPrimaryKey: self.playerId),
+                let bettingMoney = self.dack.game?.bettingMoney
+            {
+            
+                try! Realm().write {
+                    
+                    if self.isWin {
+                        player.money += bettingMoney
+                        dealar.money -= bettingMoney
+                        
+                    } else {
+                        player.money -= bettingMoney
+                        dealar.money += bettingMoney
+                    }
+                }
+            }
         }
     }
     
+    var isWin:Bool {
+        if let dr = Dealer.shared.dealer?.games.last?.gameResultValue,
+            let mr = dack.game?.gameResultValue  {
+            if dr.rawValue < mr.rawValue {
+                return true
+            }
+        }
+        return false
+    }
 }
