@@ -9,7 +9,6 @@
         <!--Tab Bar Controller-->
         <scene sceneID="Uwp-Un-wig">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GnG-Ib-Y7V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tabBarController id="ffH-5e-xFT" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="T9s-Un-N7Q">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -22,6 +21,7 @@
                         <segue destination="jqV-tI-Ixs" kind="relationship" relationship="viewControllers" id="jRw-GA-Nlj"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GnG-Ib-Y7V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-636" y="-716"/>
         </scene>
@@ -323,9 +323,9 @@
                                                 <constraint firstAttribute="width" constant="300" id="7kO-L9-MgT"/>
                                             </constraints>
                                         </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="500" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kTc-EJ-Pbm">
-                                            <rect key="frame" x="373" y="10" width="31" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="500" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kTc-EJ-Pbm">
+                                            <rect key="frame" x="379.5" y="10" width="24.5" height="16"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <color key="textColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>

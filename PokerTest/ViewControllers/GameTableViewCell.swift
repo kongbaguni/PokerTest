@@ -24,7 +24,10 @@ class GameTableViewCell : UITableViewCell {
         super.layoutSubviews()
         nameLabel.text = player?.name
         let m = player?.games.last?.bettingMoneyStringValue ?? "0"
-        bettingLabel.text = m
+        bettingLabel.text = """
+        betting: \(m)
+        money: \(player?.moneyString ?? "0")
+        """
         dack.playerId = playerId
         if dack.fliped {
             dack.flip()
