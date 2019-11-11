@@ -17,6 +17,7 @@ class GameTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadDealerData()
+        dealerDack.refresh()
     }
     
     func loadDealerData() {
@@ -65,12 +66,19 @@ class GameTableViewController: UITableViewController {
         
         loadDealerData()
         tableView.reloadData()
-        if dealerDack.fliped {
-            dealerDack.flip()
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
-            self.dealerDack.flip()
-        }
+        dealerDack.refresh()
     }
     
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        performSegue(withIdentifier: "showGameHistory", sender: players[indexPath.row].id)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? GameHistoryTableViewController {
+            vc.playerId = sender as? String ?? ""
+        }
+    }
 }
+

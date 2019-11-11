@@ -29,37 +29,41 @@ class GameTableViewCell : UITableViewCell {
         money: \(player?.moneyString ?? "0")
         """
         dack.playerId = playerId
-        if dack.fliped {
-            dack.flip()
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
-            self.dack.flip()
-            let realm = try! Realm()
-            if
-                let dealar = realm.objects(DealerModel.self).first,
-                let player = realm.object(ofType: PlayerModel.self, forPrimaryKey: self.playerId),
-                let bettingMoney = self.dack.game?.bettingMoney
-            {
+        let realm = try! Realm()
+        if
+            let dealar = realm.objects(DealerModel.self).first,
+            let player = realm.object(ofType: PlayerModel.self, forPrimaryKey: self.playerId),
+            let bettingMoney = self.dack.game?.bettingMoney
+        {
             
-                try! Realm().write {
+            try! Realm().write {
+                if self.isWin {
+                    player.money += bettingMoney
+                    dealar.money -= bettingMoney
+                    self.dack.backgroundColor = .blue
                     
-                    if self.isWin {
-                        player.money += bettingMoney
-                        dealar.money -= bettingMoney
-                        
-                    } else {
-                        player.money -= bettingMoney
-                        dealar.money += bettingMoney
-                    }
+                } else {
+                    player.money -= bettingMoney
+                    dealar.money += bettingMoney
+                    self.dack.backgroundColor = .red
                 }
             }
         }
+        dack.refresh()
     }
     
     var isWin:Bool {
-        if let dr = Dealer.shared.dealer?.games.last?.gameResultValue,
-            let mr = dack.game?.gameResultValue  {
-            if dr.rawValue < mr.rawValue {
+        guard let game_d = Dealer.shared.dealer?.games.last, let game_p = dack.game else {
+            return false
+        }
+        
+        let dr = game_d.gameResultValue
+        let pr = game_p.gameResultValue
+        if dr.rawValue < pr.rawValue {
+            return true
+        }
+        else if dr.rawValue == pr.rawValue {
+            if game_d.cardsPoint < game_p.cardsPoint {
                 return true
             }
         }

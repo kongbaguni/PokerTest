@@ -81,14 +81,19 @@ class GameModel: Object {
             
             var check:[Int] = []
             var types = Set<String>()
+            var indexes = Set<Int>()
+            
             for c in a {
                 check.append(c.index)
                 types.insert(c.type.rawValue)
+                indexes.insert(c.index)
             }
             
             if types.count == 5 {
                 return .fiveOfaKind
             }
+            let isOnePair = indexes.count == 4
+            let isTwoPair = indexes.count == 3
             
             var isStraight = false
             if (check[0] - check[1] == 1)
@@ -102,11 +107,55 @@ class GameModel: Object {
             if isStraight && isFlush {
                 return .straightFlush
             }
+            if isTwoPair {
+                return .twoPairs
+            }
+            if isOnePair {
+                return .onePair
+            }
+            if indexes.count == 2 {
+                return .fullHouse
+            }
+            if types.count == 3 {
+                return .threeOfaKind
+            }
             
         }
         return .highcard
     }
     
+    var gameResultValueString:String {
+        switch gameResultValue {
+        case .onePair:
+            return "one pair"
+        case .twoPairs:
+            return "two pairs"
+        case .threeOfaKind:
+            return "three of a kind"
+        case .straight:
+            return "straight"
+        case .flush:
+            return "flush"
+        case .fullHouse:
+            return "fullHouse"
+        case .fourOfaKind:
+            return "four of a kind"
+        case .straightFlush:
+            return "straigh flush"
+        case .fiveOfaKind:
+            return "five of a kind"
+        default:
+            return "highcard"
+        }
+    }
+    
+    var cardsPoint:Int {
+        var result:Int = 0
+        for card in cards {
+            result += card.cardValue?.value ?? 0
+        }
+        return result
+    }
     
     var bettingMoneyStringValue : String {
          return NumberFormatter.localizedString(from: NSNumber(integerLiteral: bettingMoney), number: .currency)

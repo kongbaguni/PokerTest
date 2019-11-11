@@ -23,6 +23,9 @@
 		C3272641237542A200B4E368 /* CardDackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3272640237542A200B4E368 /* CardDackView.swift */; };
 		C3272643237546A800B4E368 /* GameTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3272642237546A800B4E368 /* GameTableViewController.swift */; };
 		C32726452375471B00B4E368 /* GameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32726442375471B00B4E368 /* GameTableViewCell.swift */; };
+		C370589D237933AC00FC85D7 /* TTSHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C370589C237933AC00FC85D7 /* TTSHelper.swift */; };
+		C370589F23793AB000FC85D7 /* GameHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C370589E23793AB000FC85D7 /* GameHistoryTableViewController.swift */; };
+		C37058A123793AEE00FC85D7 /* GameHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37058A023793AEE00FC85D7 /* GameHistoryTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +48,9 @@
 		C3272640237542A200B4E368 /* CardDackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDackView.swift; sourceTree = "<group>"; };
 		C3272642237546A800B4E368 /* GameTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTableViewController.swift; sourceTree = "<group>"; };
 		C32726442375471B00B4E368 /* GameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTableViewCell.swift; sourceTree = "<group>"; };
+		C370589C237933AC00FC85D7 /* TTSHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSHelper.swift; sourceTree = "<group>"; };
+		C370589E23793AB000FC85D7 /* GameHistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHistoryTableViewController.swift; sourceTree = "<group>"; };
+		C37058A023793AEE00FC85D7 /* GameHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		CE0C67EECD4A29D08F0D2612 /* Pods-PokerTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokerTest.release.xcconfig"; path = "Target Support Files/Pods-PokerTest/Pods-PokerTest.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,6 +108,7 @@
 				C327261B23752F9300B4E368 /* AppDelegate.swift */,
 				C327263A2375371A00B4E368 /* ViewControllers */,
 				C327261D23752F9300B4E368 /* SceneDelegate.swift */,
+				C370589C237933AC00FC85D7 /* TTSHelper.swift */,
 				C327263D23753FAB00B4E368 /* StoryBoard */,
 				C327262423752F9500B4E368 /* Assets.xcassets */,
 				C327262623752F9500B4E368 /* LaunchScreen.storyboard */,
@@ -128,6 +135,8 @@
 				C327263B2375373500B4E368 /* PlayerListTableViewController.swift */,
 				C3272642237546A800B4E368 /* GameTableViewController.swift */,
 				C32726442375471B00B4E368 /* GameTableViewCell.swift */,
+				C370589E23793AB000FC85D7 /* GameHistoryTableViewController.swift */,
+				C37058A023793AEE00FC85D7 /* GameHistoryTableViewCell.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -259,11 +268,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3272641237542A200B4E368 /* CardDackView.swift in Sources */,
+				C370589D237933AC00FC85D7 /* TTSHelper.swift in Sources */,
 				C327263423752FAF00B4E368 /* GameModel.swift in Sources */,
 				C327263323752FAF00B4E368 /* Dealer.swift in Sources */,
 				C327261C23752F9300B4E368 /* AppDelegate.swift in Sources */,
 				C327261E23752F9300B4E368 /* SceneDelegate.swift in Sources */,
+				C370589F23793AB000FC85D7 /* GameHistoryTableViewController.swift in Sources */,
 				C3272643237546A800B4E368 /* GameTableViewController.swift in Sources */,
+				C37058A123793AEE00FC85D7 /* GameHistoryTableViewCell.swift in Sources */,
 				C32726452375471B00B4E368 /* GameTableViewCell.swift in Sources */,
 				C3272639237531E600B4E368 /* NewPlayerViewController.swift in Sources */,
 				C327263523752FAF00B4E368 /* CardModel.swift in Sources */,

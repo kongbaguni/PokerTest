@@ -238,12 +238,12 @@
         <scene sceneID="HsP-Ug-eQa">
             <objects>
                 <tableViewController id="jqV-tI-Ixs" customClass="GameTableViewController" customModule="PokerTest" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="tUP-GS-Bcm">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="tUP-GS-Bcm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="aVo-4U-DFK">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dealer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gGD-ev-syp">
@@ -256,7 +256,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iFw-PU-uax" customClass="CardDackView" customModule="PokerTest">
-                                    <rect key="frame" x="0.0" y="50" width="414" height="78"/>
+                                    <rect key="frame" x="0.0" y="50" width="414" height="100"/>
                                     <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="300" id="jOv-Kf-Htr"/>
@@ -283,7 +283,7 @@
                             </constraints>
                         </view>
                         <view key="tableFooterView" contentMode="scaleToFill" id="bLE-r7-8Od">
-                            <rect key="frame" x="0.0" y="384" width="414" height="44"/>
+                            <rect key="frame" x="0.0" y="406" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xxF-Pt-vkU">
@@ -304,7 +304,7 @@
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="player" rowHeight="200" id="EWA-f0-RQd" customClass="GameTableViewCell" customModule="PokerTest" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="156" width="414" height="200"/>
+                                <rect key="frame" x="0.0" y="178" width="414" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EWA-f0-RQd" id="stg-bR-wvN">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
@@ -357,11 +357,56 @@
                     <connections>
                         <outlet property="dealerBettingLabel" destination="Q11-Gk-AL5" id="vth-Uq-0Hs"/>
                         <outlet property="dealerDack" destination="iFw-PU-uax" id="XK9-KJ-Oye"/>
+                        <segue destination="t3A-Si-A4h" kind="show" identifier="showGameHistory" id="gp3-uG-aUT"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BhM-kI-tIg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="417" y="155"/>
+        </scene>
+        <!--Game History Table View Controller-->
+        <scene sceneID="cDo-ay-IPs">
+            <objects>
+                <tableViewController id="t3A-Si-A4h" customClass="GameHistoryTableViewController" customModule="PokerTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="qRV-Cc-Rwq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="150" id="jc4-vc-wWd" customClass="GameHistoryTableViewCell" customModule="PokerTest" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="150"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jc4-vc-wWd" id="0g1-W4-CeU">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lqU-RP-xXJ" customClass="CardDackView" customModule="PokerTest" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="lqU-RP-xXJ" firstAttribute="top" secondItem="0g1-W4-CeU" secondAttribute="top" id="3PI-r8-ooB"/>
+                                        <constraint firstAttribute="trailing" secondItem="lqU-RP-xXJ" secondAttribute="trailing" id="hid-fZ-RmN"/>
+                                        <constraint firstItem="lqU-RP-xXJ" firstAttribute="leading" secondItem="0g1-W4-CeU" secondAttribute="leading" id="mks-p1-13d"/>
+                                        <constraint firstAttribute="bottom" secondItem="lqU-RP-xXJ" secondAttribute="bottom" id="vYq-aa-nrY"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dack" destination="lqU-RP-xXJ" id="wu9-Yy-gcY"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="t3A-Si-A4h" id="7TV-gh-KPg"/>
+                            <outlet property="delegate" destination="t3A-Si-A4h" id="UJE-Ug-yzf"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="HQ5-iI-fvc"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Db-NY-2dw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1456" y="196"/>
         </scene>
     </scenes>
     <resources>

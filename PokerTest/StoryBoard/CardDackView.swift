@@ -17,6 +17,7 @@ class CardDackView : UIView {
     @IBOutlet weak var imageView3:UIImageView!
     @IBOutlet weak var imageView4:UIImageView!
     @IBOutlet weak var imageView5:UIImageView!
+    @IBOutlet weak var valueLabel: UILabel!
     
     override init(frame: CGRect) {
         super.init(frame:frame)
@@ -35,13 +36,20 @@ class CardDackView : UIView {
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         setDefaultImage()
+        valueLabel.text = nil
     }
+    var gameId:String? = nil
     
     var playerId:String = ""
     
     var isDealer:Bool = false
     
     var game:GameModel? {
+        if let gameId = gameId {
+            if let game = try! Realm().object(ofType: GameModel.self, forPrimaryKey: gameId) {
+                return game
+            }
+        }
         if isDealer {
             return try! Realm().objects(DealerModel.self).first?.games.last
         }
@@ -49,7 +57,6 @@ class CardDackView : UIView {
         return player?.games.last
     }
     
-    var fliped = false
     
     private func setDefaultImage() {
         imageView1?.image = #imageLiteral(resourceName: "blue_back")
@@ -59,21 +66,19 @@ class CardDackView : UIView {
         imageView5?.image = #imageLiteral(resourceName: "blue_back")
     }
     
-    func flip() {
-        guard let images = game?.cardsImageValues else {
+    
+    func refresh() {
+        guard let game = game else {
+            setDefaultImage()
             return
         }
-        fliped.toggle()
-        if fliped {
-            imageView1.image = images[0]
-            imageView2.image = images[1]
-            imageView3.image = images[2]
-            imageView4.image = images[3]
-            imageView5.image = images[4]
-        }
-        else {
-            setDefaultImage()
-        }
+        let images = game.cardsImageValues
+        imageView1.image = images[0]
+        imageView2.image = images[1]
+        imageView3.image = images[2]
+        imageView4.image = images[3]
+        imageView5.image = images[4]
+        valueLabel.text = " \(game.gameResultValueString) \(game.cardsPoint)"
     }
 
 }
