@@ -71,6 +71,20 @@ class GameTableViewController: UITableViewController {
         }
     }
     
+    @IBAction func onTouchupResetBtn(_ sender: UIButton) {
+        autoPlaySwitch.isOn = false
+        let vc = UIAlertController(title: "delete", message: "delete all game", preferredStyle: .alert)
+        vc.addAction(UIAlertAction(title: "ok", style: .default, handler: { (_) in
+            let realm = try! Realm()
+            realm.beginWrite()
+            realm.delete(realm.objects(GameModel.self))
+            try! realm.commitWrite()
+            self.reloadData()            
+        }))
+        vc.addAction(UIAlertAction(title: "cancel", style: .cancel, handler: nil))
+        present(vc, animated: true, completion: nil)
+    }
+    
     func play() {
         guard let d = Dealer.shared.dealer else {
             return
@@ -87,15 +101,19 @@ class GameTableViewController: UITableViewController {
             player.play()
         }
         try! realm.commitWrite()
-        
-        loadDealerData()
-        tableView.reloadData()
-        dealerDack.refresh()
+        reloadData()
         if autoPlaySwitch.isOn {
             DispatchQueue.main.asyncAfter(deadline: .now() + .microseconds(1)) {
                 self.play()
             }
         }
+    }
+    
+    private func reloadData() {
+        loadDealerData()
+        tableView.reloadData()
+        dealerDack.refresh()
+        (tabBarController?.viewControllers?.last as? GameResultTableViewController)?.tableView.reloadData()
     }
 }
 
