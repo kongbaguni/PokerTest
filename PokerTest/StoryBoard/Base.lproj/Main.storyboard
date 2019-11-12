@@ -5,6 +5,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Pacifico.ttf">
+            <string>Pacifico</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Tab Bar Controller-->
         <scene sceneID="Uwp-Un-wig">
@@ -244,20 +249,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="aVo-4U-DFK">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="180"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dealer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gGD-ev-syp">
-                                    <rect key="frame" x="15" y="10" width="80" height="20.5"/>
+                                    <rect key="frame" x="15" y="10" width="80" height="32"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="80" id="lba-QN-2aA"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <fontDescription key="fontDescription" name="Pacifico" family="Pacifico" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iFw-PU-uax" customClass="CardDackView" customModule="PokerTest">
-                                    <rect key="frame" x="0.0" y="50" width="414" height="100"/>
+                                    <rect key="frame" x="0.0" y="50" width="414" height="130"/>
                                     <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="300" id="jOv-Kf-Htr"/>
@@ -270,7 +275,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="vRP-AT-fZu">
-                                    <rect key="frame" x="10" y="109" width="51" height="31"/>
+                                    <rect key="frame" x="10" y="139" width="51" height="31"/>
                                     <connections>
                                         <action selector="onChangeSwitch:" destination="jqV-tI-Ixs" eventType="valueChanged" id="cG8-3S-Cts"/>
                                     </connections>
@@ -303,7 +308,7 @@
                             </constraints>
                         </view>
                         <view key="tableFooterView" contentMode="scaleToFill" id="bLE-r7-8Od">
-                            <rect key="frame" x="0.0" y="406" width="414" height="44"/>
+                            <rect key="frame" x="0.0" y="436" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xxF-Pt-vkU">
@@ -324,7 +329,7 @@
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="player" rowHeight="200" id="EWA-f0-RQd" customClass="GameTableViewCell" customModule="PokerTest" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="178" width="414" height="200"/>
+                                <rect key="frame" x="0.0" y="208" width="414" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EWA-f0-RQd" id="stg-bR-wvN">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>

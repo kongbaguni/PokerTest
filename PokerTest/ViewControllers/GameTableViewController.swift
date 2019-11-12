@@ -46,7 +46,7 @@ class GameTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
+        return 180
     }
     
     @IBAction func onTouchupNewGame(_ sender: UIButton) {
@@ -79,7 +79,7 @@ class GameTableViewController: UITableViewController {
             realm.beginWrite()
             realm.delete(realm.objects(GameModel.self))
             try! realm.commitWrite()
-            self.reloadData()            
+            self.reloadData()
         }))
         vc.addAction(UIAlertAction(title: "cancel", style: .cancel, handler: nil))
         present(vc, animated: true, completion: nil)

@@ -27,6 +27,7 @@
 		C370589F23793AB000FC85D7 /* GameHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C370589E23793AB000FC85D7 /* GameHistoryTableViewController.swift */; };
 		C37058A123793AEE00FC85D7 /* GameHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37058A023793AEE00FC85D7 /* GameHistoryTableViewCell.swift */; };
 		C37058A3237945D100FC85D7 /* GameResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37058A2237945D100FC85D7 /* GameResultTableViewController.swift */; };
+		C37058A6237A295700FC85D7 /* Pacifico.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C37058A4237A294B00FC85D7 /* Pacifico.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		C370589E23793AB000FC85D7 /* GameHistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHistoryTableViewController.swift; sourceTree = "<group>"; };
 		C37058A023793AEE00FC85D7 /* GameHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		C37058A2237945D100FC85D7 /* GameResultTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResultTableViewController.swift; sourceTree = "<group>"; };
+		C37058A4237A294B00FC85D7 /* Pacifico.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Pacifico.ttf; sourceTree = "<group>"; };
 		CE0C67EECD4A29D08F0D2612 /* Pods-PokerTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokerTest.release.xcconfig"; path = "Target Support Files/Pods-PokerTest/Pods-PokerTest.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,6 +115,7 @@
 				C370589C237933AC00FC85D7 /* TTSHelper.swift */,
 				C327263D23753FAB00B4E368 /* StoryBoard */,
 				C327262423752F9500B4E368 /* Assets.xcassets */,
+				C37058A5237A295100FC85D7 /* font */,
 				C327262623752F9500B4E368 /* LaunchScreen.storyboard */,
 				C327262923752F9500B4E368 /* Info.plist */,
 			);
@@ -152,6 +155,14 @@
 				C3272640237542A200B4E368 /* CardDackView.swift */,
 			);
 			path = StoryBoard;
+			sourceTree = "<group>";
+		};
+		C37058A5237A295100FC85D7 /* font */ = {
+			isa = PBXGroup;
+			children = (
+				C37058A4237A294B00FC85D7 /* Pacifico.ttf */,
+			);
+			path = font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,6 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C327262823752F9500B4E368 /* LaunchScreen.storyboard in Resources */,
+				C37058A6237A295700FC85D7 /* Pacifico.ttf in Resources */,
 				C327263F23753FCE00B4E368 /* CardDackView.xib in Resources */,
 				C327262523752F9500B4E368 /* Assets.xcassets in Resources */,
 				C327262323752F9300B4E368 /* Main.storyboard in Resources */,

@@ -14,7 +14,7 @@ class GameModel: Object {
     @objc dynamic var playerId = ""
     @objc dynamic var regDT = Date()
     @objc dynamic var bettingMoney = 0
-    @objc dynamic var gameResultRawValue:Int = -1
+    @objc dynamic var gameResultRawValue:Int = -1    
     private var cards = List<CardModel>()
     
     func insertCartd(cards: [Dealer.Card]) {

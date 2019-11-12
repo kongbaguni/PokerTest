@@ -33,7 +33,7 @@ class GameResultTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             return values.count
-        }
+        }        
         return 1
     }
     

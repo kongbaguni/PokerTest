@@ -25,7 +25,7 @@ class GameHistoryTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! GameHistoryTableViewCell
-        let id = player?.games.reversed()[indexPath.row].id
+        let id = player?.games[indexPath.row].id
         cell.gameId = id
         return cell
     }

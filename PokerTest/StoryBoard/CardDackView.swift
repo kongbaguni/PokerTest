@@ -18,6 +18,7 @@ class CardDackView : UIView {
     @IBOutlet weak var imageView4:UIImageView!
     @IBOutlet weak var imageView5:UIImageView!
     @IBOutlet weak var valueLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     
     override init(frame: CGRect) {
         super.init(frame:frame)
@@ -37,7 +38,10 @@ class CardDackView : UIView {
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         setDefaultImage()
         valueLabel.text = nil
+        valueLabel.font = UIFont(name: "Pacifico", size: 15)
+        dateLabel.font = UIFont(name: "Pacifico", size: 10)
     }
+    
     var gameId:String? = nil
     
     var playerId:String = ""
@@ -79,6 +83,8 @@ class CardDackView : UIView {
         imageView4.image = images[3]
         imageView5.image = images[4]
         valueLabel.text = " \(game.gameResultValueString) \(game.cardsPoint)"
-    }
+        dateLabel.text = DateFormatter.localizedString(from: game.regDT, dateStyle: .full, timeStyle: .short)
+        }
+            
 
 }
