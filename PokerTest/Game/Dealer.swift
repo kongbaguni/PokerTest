@@ -16,6 +16,15 @@ class Dealer {
         return try! Realm().objects(DealerModel.self).first
     }
     
+    var isUseJoker:Bool = false {
+        willSet {
+            if newValue != isUseJoker {
+                dack.removeAll()
+                insertCard()
+            }
+        }
+    }
+    
     init() {
         if dealer == nil {
             let model = DealerModel()
@@ -153,14 +162,16 @@ class Dealer {
                 }
             }
         }
-
     }
     
+    private let jokerCards:[Card] = [
+        Card(type: .joker, index: 0),
+        Card(type: .joker, index: 0),
+        Card(type: .joker, index: 0),
+        Card(type: .joker, index: 0),
+    ]
+    
     private let cards:[Card] = [
-        Card(type: .joker, index: 0),
-        Card(type: .joker, index: 0),
-        Card(type: .joker, index: 0),
-        Card(type: .joker, index: 0),
         Card(type: .club, index: 1),
         Card(type: .club, index: 2),
         Card(type: .club, index: 3),
@@ -219,6 +230,11 @@ class Dealer {
     
     private func insertCard() {
         var cards = self.cards
+        if isUseJoker {
+            for joker in jokerCards {
+                cards.append(joker)
+            }
+        }
         while cards.count > 0 {
             cards.shuffle()
             if let card = cards.last {

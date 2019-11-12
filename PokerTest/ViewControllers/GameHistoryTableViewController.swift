@@ -73,6 +73,9 @@ class GameHistoryTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! GameHistoryTableViewCell
         let id = data?[indexPath.row].id
         cell.gameId = id
+        if gameResult != nil {
+            cell.dack.isNeedDisplayPlayerName = true
+        }
         return cell
     }
     

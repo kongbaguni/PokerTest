@@ -18,6 +18,7 @@ class GameTableViewController: UITableViewController {
     @IBOutlet weak var dealerBettingLabel:UILabel!
     @IBOutlet weak var dealerDack:CardDackView!
     @IBOutlet weak var autoPlaySwitch: UISwitch!
+    @IBOutlet weak var jokerSwitch: UISwitch!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,8 +72,15 @@ class GameTableViewController: UITableViewController {
     }
     
     @IBAction func onChangeSwitch(_ sender: UISwitch) {
-        if sender.isOn {
-            play()
+        switch sender {
+        case autoPlaySwitch:
+            if sender.isOn {
+                play()
+            }
+        case jokerSwitch:
+            Dealer.shared.isUseJoker = sender.isOn
+        default:
+            break
         }
     }
     

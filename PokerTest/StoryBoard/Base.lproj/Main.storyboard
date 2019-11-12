@@ -280,6 +280,12 @@
                                         <action selector="onChangeSwitch:" destination="jqV-tI-Ixs" eventType="valueChanged" id="cG8-3S-Cts"/>
                                     </connections>
                                 </switch>
+                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ZPF-zW-5gB">
+                                    <rect key="frame" x="10" y="98" width="51" height="31"/>
+                                    <connections>
+                                        <action selector="onChangeSwitch:" destination="jqV-tI-Ixs" eventType="valueChanged" id="ec3-LG-jNR"/>
+                                    </connections>
+                                </switch>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P2F-yG-lPV">
                                     <rect key="frame" x="10" y="70" width="35" height="30"/>
                                     <state key="normal" title="reset">
@@ -293,12 +299,14 @@
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="iFw-PU-uax" secondAttribute="bottom" id="01j-g1-4aN"/>
+                                <constraint firstItem="vRP-AT-fZu" firstAttribute="top" secondItem="ZPF-zW-5gB" secondAttribute="bottom" constant="10" id="3eo-yI-9Ou"/>
                                 <constraint firstItem="P2F-yG-lPV" firstAttribute="top" secondItem="aVo-4U-DFK" secondAttribute="top" constant="70" id="HkL-JL-xiI"/>
                                 <constraint firstItem="gGD-ev-syp" firstAttribute="leading" secondItem="aVo-4U-DFK" secondAttribute="leading" constant="15" id="NEq-T5-Dyd"/>
                                 <constraint firstItem="gGD-ev-syp" firstAttribute="top" secondItem="aVo-4U-DFK" secondAttribute="top" constant="10" id="P6a-To-xFU"/>
                                 <constraint firstItem="iFw-PU-uax" firstAttribute="top" secondItem="aVo-4U-DFK" secondAttribute="top" constant="50" id="SwK-zO-sW1"/>
                                 <constraint firstItem="iFw-PU-uax" firstAttribute="leading" secondItem="aVo-4U-DFK" secondAttribute="leading" id="Wu7-Dd-i43"/>
                                 <constraint firstItem="P2F-yG-lPV" firstAttribute="leading" secondItem="aVo-4U-DFK" secondAttribute="leading" constant="10" id="X6B-3Z-eoX"/>
+                                <constraint firstItem="ZPF-zW-5gB" firstAttribute="leading" secondItem="aVo-4U-DFK" secondAttribute="leading" constant="10" id="cEy-rJ-Pix"/>
                                 <constraint firstItem="vRP-AT-fZu" firstAttribute="leading" secondItem="aVo-4U-DFK" secondAttribute="leading" constant="10" id="dK4-x2-nKT"/>
                                 <constraint firstItem="Q11-Gk-AL5" firstAttribute="leading" secondItem="gGD-ev-syp" secondAttribute="trailing" constant="15" id="kj4-OR-5uk"/>
                                 <constraint firstAttribute="trailing" secondItem="iFw-PU-uax" secondAttribute="trailing" id="rFe-P2-ehl"/>
@@ -384,6 +392,7 @@
                         <outlet property="autoPlaySwitch" destination="vRP-AT-fZu" id="Q3A-2p-Yw3"/>
                         <outlet property="dealerBettingLabel" destination="Q11-Gk-AL5" id="vth-Uq-0Hs"/>
                         <outlet property="dealerDack" destination="iFw-PU-uax" id="XK9-KJ-Oye"/>
+                        <outlet property="jokerSwitch" destination="ZPF-zW-5gB" id="4h8-p8-Lbd"/>
                         <segue destination="t3A-Si-A4h" kind="show" identifier="showGameHistory" id="gp3-uG-aUT"/>
                     </connections>
                 </tableViewController>

@@ -23,6 +23,10 @@ class GameModel: Object {
         return GameWinStatus(rawValue: gameWinStatusRawValue)
     }
     
+    var player:PlayerModel? {
+        return try! Realm().object(ofType: PlayerModel.self, forPrimaryKey: playerId)
+    }
+    
     private var cards = List<CardModel>()
     
     func insertCartd(cards: [Dealer.Card]) {
@@ -31,7 +35,7 @@ class GameModel: Object {
             let model = c.model
             self.cards.append(model)
         }
-        gameResultRawValue = gameResultValue.rawValue
+        self.gameResultRawValue = gameResultValue.rawValue
     }
     
     override static func primaryKey() -> String? {
@@ -83,12 +87,14 @@ class GameModel: Object {
         case win = 2
     }
     
+  
     /** 족보판정*/
-    var gameResultValue:CardValue {
+    private var gameResultValue:CardValue {
         if let result = CardValue(rawValue: gameResultRawValue) {
             return result
         }
         var tcards:[Dealer.Card] = []
+        
         for card in cards {
             if let c = card.cardValue {
                 tcards.append(c)
@@ -179,7 +185,10 @@ class GameModel: Object {
     }
     
     var gameResultValueString:String {
-        return GameModel.getCardValueString(card: gameResultValue)
+        if let value = CardValue(rawValue: gameResultRawValue) {
+            return GameModel.getCardValueString(card: value)
+        }
+        return ""
     }
     
     var cardsPoint:Int {

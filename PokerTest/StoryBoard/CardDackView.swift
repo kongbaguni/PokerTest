@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 
 class CardDackView : UIView {
-   
+    var isNeedDisplayPlayerName:Bool = false
     @IBOutlet weak var contentView:UIView!
     @IBOutlet weak var imageView1:UIImageView!
     @IBOutlet weak var imageView2:UIImageView!
@@ -82,6 +82,9 @@ class CardDackView : UIView {
         imageView3.image = images[2]
         imageView4.image = images[3]
         imageView5.image = images[4]
+        if isNeedDisplayPlayerName {
+            valueLabel.text = " \(game.player?.name ?? "") : \(game.cardsPoint)"
+        }
         valueLabel.text = " \(game.gameResultValueString) \(game.cardsPoint)"
         dateLabel.text = DateFormatter.localizedString(from: game.regDT, dateStyle: .full, timeStyle: .short)
         }
