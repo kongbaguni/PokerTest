@@ -158,9 +158,9 @@ class Dealer {
     
     private let cards:[Card] = [
         Card(type: .joker, index: 0),
-//        Card(type: .joker, index: 1),
-//        Card(type: .joker, index: 2),
-//        Card(type: .joker, index: 3),
+        Card(type: .joker, index: 0),
+        Card(type: .joker, index: 0),
+        Card(type: .joker, index: 0),
         Card(type: .club, index: 1),
         Card(type: .club, index: 2),
         Card(type: .club, index: 3),

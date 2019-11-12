@@ -94,12 +94,29 @@ class GameTableViewController: UITableViewController {
         realm.beginWrite()
         d.initGame()
         d.play()
-        
+        let dgame = d.games.last!
+
         for player in players {
             player.initGame()
-            player.betting(money: 100)
+            
+            player.betting()
             player.play()
+            
+            let bettingMoney = player.games.last?.bettingMoney ?? 0
+            let gameResult = player.games.last!.compareGameResult(game: dgame)
+            switch gameResult {
+            case .win:
+                player.money += bettingMoney
+                d.money -= bettingMoney
+            case .draw:
+                break
+            case .lose:
+                player.money -= bettingMoney
+                d.money += bettingMoney
+            }
+            player.games.last?.gameWinStatusRawValue = gameResult.rawValue
         }
+        
         try! realm.commitWrite()
         reloadData()
         if autoPlaySwitch.isOn {

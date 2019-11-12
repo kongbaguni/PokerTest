@@ -14,7 +14,15 @@ class GameModel: Object {
     @objc dynamic var playerId = ""
     @objc dynamic var regDT = Date()
     @objc dynamic var bettingMoney = 0
-    @objc dynamic var gameResultRawValue:Int = -1    
+    /** 카드 족보 rawvalue*/
+    @objc dynamic var gameResultRawValue:Int = -1
+    /** 게임 결과 rawValue*/
+    @objc dynamic var gameWinStatusRawValue:Int = -1
+    
+    var gameWinStatus:GameWinStatus? {
+        return GameWinStatus(rawValue: gameWinStatusRawValue)
+    }
+    
     private var cards = List<CardModel>()
     
     func insertCartd(cards: [Dealer.Card]) {
@@ -67,6 +75,12 @@ class GameModel: Object {
         case fourOfaKind = 7
         case straightFlush = 8
         case fiveOfaKind = 9
+    }
+    /** 게임 승패*/
+    enum GameWinStatus:Int {
+        case draw = 0
+        case lose = 1
+        case win = 2
     }
     
     /** 족보판정*/
@@ -203,6 +217,19 @@ class GameModel: Object {
         default:
             return "highcard"
         }
+    }
+    
+    func compareGameResult(game:GameModel)->GameWinStatus {
+        if self.gameResultRawValue > game.gameResultRawValue {
+            return .win
+        }
+        if self.cardsPoint > game.cardsPoint {
+            return .win
+        }
+        if self.cardsPoint == game.cardsPoint && self.gameResultRawValue == game.gameResultRawValue {
+            return .draw
+        }
+        return .lose        
     }
 }
 

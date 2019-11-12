@@ -27,12 +27,47 @@ class PlayerModel: Object {
         games.append(game)
     }
     
-    func betting(money:Int) {
-        guard let game = games.last else {
-            return
+    func betting() {
+        var bettingMoney:Int {
+            let MIN = 100
+            let MAX = 1000
+            let count = games.count
+            if count < 6 {
+                return MIN
+            }
+            var money = self.games[games.count - 2].bettingMoney
+
+            let games = self.games.sorted(byKeyPath: "regDT", ascending: false)
+            var ref = 0
+            for i in 0...5 {
+                if let status = GameModel.GameWinStatus(rawValue: games[i].gameWinStatusRawValue) {
+                    switch status {
+                    case .lose:
+                        ref += 1
+                    case .win:
+                        ref -= 1
+                    default:
+                        break
+                    }
+                }
+            }
+            if ref > 0 {
+                money += 100
+            }
+            else {
+                money -= 100
+            }
+            if money < MIN {
+                return MIN
+            }
+            if money > MAX {
+                return MAX
+            }
+            return money
         }
-        game.bettingMoney = money
+        games.last?.bettingMoney = bettingMoney
     }
+    
     
     func play() {
         guard let game = games.last else {
