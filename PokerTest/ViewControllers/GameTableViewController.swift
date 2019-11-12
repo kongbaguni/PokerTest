@@ -9,6 +9,10 @@
 import Foundation
 import UIKit
 import RealmSwift
+extension Notification.Name {
+    /** 한게임 끝나는 시점 알려주는 notification*/
+    static var onGamePlayFinishNotification = Notification.Name("onGamePlayFinish_observer")
+}
 
 class GameTableViewController: UITableViewController {
     @IBOutlet weak var dealerBettingLabel:UILabel!
@@ -119,8 +123,9 @@ class GameTableViewController: UITableViewController {
         
         try! realm.commitWrite()
         reloadData()
+        NotificationCenter.default.post(name: .onGamePlayFinishNotification, object: nil)
         if autoPlaySwitch.isOn {
-            DispatchQueue.main.asyncAfter(deadline: .now() + .microseconds(1)) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
                 self.play()
             }
         }
@@ -130,7 +135,6 @@ class GameTableViewController: UITableViewController {
         loadDealerData()
         tableView.reloadData()
         dealerDack.refresh()
-        (tabBarController?.viewControllers?.last as? GameResultTableViewController)?.tableView.reloadData()
     }
 }
 

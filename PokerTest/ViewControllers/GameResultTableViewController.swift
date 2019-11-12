@@ -26,6 +26,13 @@ class GameResultTableViewController: UITableViewController {
         ]
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        NotificationCenter.default.addObserver(forName: .onGamePlayFinishNotification, object: nil, queue: nil) { [weak self] (_) in
+            self?.tableView.reloadData()
+        }
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
