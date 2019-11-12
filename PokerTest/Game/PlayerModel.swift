@@ -42,9 +42,9 @@ class PlayerModel: Object {
             for i in 0...5 {
                 if let status = GameModel.GameWinStatus(rawValue: games[i].gameWinStatusRawValue) {
                     switch status {
-                    case .lose:
-                        ref += 1
                     case .win:
+                        ref += 1
+                    case .lose:
                         ref -= 1
                     default:
                         break
@@ -54,15 +54,17 @@ class PlayerModel: Object {
             if ref > 0 {
                 money += 1000
             }
-            else {
+            else if ref < 0 {
                 money -= 1000
             }
+            
             if money < MIN {
                 return MIN
             }
             if money > MAX {
                 return MAX
             }
+            
             return money
         }
         games.last?.bettingMoney = bettingMoney
