@@ -99,44 +99,54 @@ class GameTableViewController: UITableViewController {
     }
     
     func play() {
-        guard let d = Dealer.shared.dealer else {
-            return
-        }
+        let isAuto = self.autoPlaySwitch.isOn
 
-        let realm = try! Realm()
-        realm.beginWrite()
-        d.initGame()
-        d.play()
-        let dgame = d.games.last!
+        DispatchQueue.global().async { [weak self] in
+            guard let d = Dealer.shared.dealer else {
+                return
+            }
+            guard let s = self else {
+                return
+            }
+            
+            let realm = try! Realm()
+            realm.beginWrite()
+            d.initGame()
+            d.play()
+            let dgame = d.games.last!
 
-        for player in players {
-            player.initGame()
-            
-            player.betting()
-            player.play()
-            
-            let bettingMoney = player.games.last?.bettingMoney ?? 0
-            let gameResult = player.games.last!.compareGameResult(game: dgame)
-            switch gameResult {
-            case .win:
-                player.money += bettingMoney
-                d.money -= bettingMoney
-            case .draw:
-                break
-            case .lose:
-                player.money -= bettingMoney
-                d.money += bettingMoney
+            for player in s.players {
+                player.initGame()
+                
+                player.betting()
+                player.play()
+                
+                let bettingMoney = player.games.last?.bettingMoney ?? 0
+                let gameResult = player.games.last!.compareGameResult(game: dgame)
+                switch gameResult {
+                case .win:
+                    player.money += bettingMoney
+                    d.money -= bettingMoney
+                case .draw:
+                    break
+                case .lose:
+                    player.money -= bettingMoney
+                    d.money += bettingMoney
+                }
+                player.games.last?.gameWinStatusRawValue = gameResult.rawValue
             }
-            player.games.last?.gameWinStatusRawValue = gameResult.rawValue
-        }
-        
-        try! realm.commitWrite()
-        reloadData()
-        NotificationCenter.default.post(name: .onGamePlayFinishNotification, object: nil)
-        if autoPlaySwitch.isOn {
-            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(1)) {
-                self.play()
+            
+            try! realm.commitWrite()
+            DispatchQueue.main.async {
+                s.reloadData()
+                NotificationCenter.default.post(name: .onGamePlayFinishNotification, object: nil)
             }
+            if isAuto {
+                DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(1)) {
+                    s.play()
+                }
+            }
+
         }
     }
     

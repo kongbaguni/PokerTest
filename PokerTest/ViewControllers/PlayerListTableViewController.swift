@@ -14,6 +14,13 @@ class PlayerListTableViewController: UITableViewController {
         return try! Realm().objects(PlayerModel.self)
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        NotificationCenter.default.addObserver(forName: .onGamePlayFinishNotification, object: nil, queue: nil) { [weak self] (notification) in
+            self?.tableView.reloadData()
+        }
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
