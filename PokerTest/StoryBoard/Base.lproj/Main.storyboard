@@ -23,8 +23,8 @@
                     <connections>
                         <segue destination="sPh-6P-0UU" kind="relationship" relationship="viewControllers" id="Aaj-Vq-mM5"/>
                         <segue destination="uvY-hP-emT" kind="relationship" relationship="viewControllers" id="tlg-ZC-BUH"/>
-                        <segue destination="jqV-tI-Ixs" kind="relationship" relationship="viewControllers" id="jRw-GA-Nlj"/>
-                        <segue destination="hMx-jl-KPZ" kind="relationship" relationship="viewControllers" id="jca-d7-2cI"/>
+                        <segue destination="aYT-zd-CPM" kind="relationship" relationship="viewControllers" id="9et-xX-m5O"/>
+                        <segue destination="y7u-Jl-zgL" kind="relationship" relationship="viewControllers" id="rWY-8y-UV9"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GnG-Ib-Y7V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -243,7 +243,7 @@
         <!--game-->
         <scene sceneID="HsP-Ug-eQa">
             <objects>
-                <tableViewController id="jqV-tI-Ixs" customClass="GameTableViewController" customModule="PokerTest" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="game" id="jqV-tI-Ixs" customClass="GameTableViewController" customModule="PokerTest" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="tUP-GS-Bcm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -379,6 +379,7 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="game" image="doc.fill" catalog="system" id="hxn-ve-Eag"/>
+                    <navigationItem key="navigationItem" id="c35-sg-YEa"/>
                     <connections>
                         <outlet property="autoPlaySwitch" destination="vRP-AT-fZu" id="Q3A-2p-Yw3"/>
                         <outlet property="dealerBettingLabel" destination="Q11-Gk-AL5" id="vth-Uq-0Hs"/>
@@ -388,14 +389,14 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BhM-kI-tIg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="417" y="155"/>
+            <point key="canvasLocation" x="290" y="885"/>
         </scene>
         <!--Game History Table View Controller-->
         <scene sceneID="cDo-ay-IPs">
             <objects>
                 <tableViewController id="t3A-Si-A4h" customClass="GameHistoryTableViewController" customModule="PokerTest" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="qRV-Cc-Rwq">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
@@ -432,12 +433,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Db-NY-2dw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="375" y="884"/>
+            <point key="canvasLocation" x="649" y="1709"/>
         </scene>
-        <!--Item-->
+        <!--game results-->
         <scene sceneID="FTa-O1-K5w">
             <objects>
-                <tableViewController id="hMx-jl-KPZ" customClass="GameResultTableViewController" customModule="PokerTest" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="game results" id="hMx-jl-KPZ" customClass="GameResultTableViewController" customModule="PokerTest" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="FyX-aF-DRk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -474,10 +475,77 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Item" id="46F-sR-JQQ"/>
+                    <navigationItem key="navigationItem" id="RuL-V4-e5h"/>
+                    <connections>
+                        <segue destination="t3A-Si-A4h" kind="show" identifier="openHistory" id="hxb-Ok-dCl"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ozX-t5-tZa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1290" y="155"/>
+            <point key="canvasLocation" x="1074" y="885"/>
+        </scene>
+        <!--Root View Controller-->
+        <scene sceneID="1lz-Ff-smc">
+            <objects>
+                <tableViewController id="01r-Rx-SSQ" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="LuH-iV-qFW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="1tc-78-3u8">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1tc-78-3u8" id="SfU-48-9f3">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="01r-Rx-SSQ" id="yes-jw-UXH"/>
+                            <outlet property="delegate" destination="01r-Rx-SSQ" id="Q3O-dM-UfS"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="8Vl-QJ-8TC"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JEM-5y-5PT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3364" y="-17"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="IHu-bk-ARH">
+            <objects>
+                <navigationController id="y7u-Jl-zgL" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="tm3-Kp-xXh"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GCK-3S-OgM">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="hMx-jl-KPZ" kind="relationship" relationship="rootViewController" id="Bw6-vl-YhI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WN8-H5-hHc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1032" y="181"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="7dG-ue-hJE">
+            <objects>
+                <navigationController id="aYT-zd-CPM" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="oHp-JH-FR7"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2Fv-Ze-Nj1">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="jqV-tI-Ixs" kind="relationship" relationship="rootViewController" id="Qyr-MK-a3l"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Whw-nQ-27T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="290" y="165"/>
         </scene>
     </scenes>
     <resources>
@@ -485,4 +553,7 @@
         <image name="person.badge.plus" catalog="system" width="64" height="58"/>
         <image name="person.circle" catalog="system" width="64" height="60"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="hxb-Ok-dCl"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -133,7 +133,7 @@ class GameModel: Object {
                 }
             }
             
-            if types.count == 5 && is4one == 1 {
+            if is4one == 1 && checks[0] == 1 {
                 return .fiveOfaKind
             }
             
@@ -145,7 +145,7 @@ class GameModel: Object {
                 isStraight = true
             }
             
-            let isFlush = types.count == 1 || types.count == 2 && checks[0] == 1
+            let isFlush = types.count == 1 
             
             if isStraight && isFlush {
                 return .straightFlush

@@ -23,6 +23,7 @@ class GameTableViewController: UITableViewController {
         super.viewDidLoad()
         loadDealerData()
         dealerDack.refresh()
+        title = "Porker"
     }
     
     func loadDealerData() {
@@ -125,7 +126,7 @@ class GameTableViewController: UITableViewController {
         reloadData()
         NotificationCenter.default.post(name: .onGamePlayFinishNotification, object: nil)
         if autoPlaySwitch.isOn {
-            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(1)) {
                 self.play()
             }
         }

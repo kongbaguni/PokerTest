@@ -28,6 +28,7 @@
 		C37058A123793AEE00FC85D7 /* GameHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37058A023793AEE00FC85D7 /* GameHistoryTableViewCell.swift */; };
 		C37058A3237945D100FC85D7 /* GameResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37058A2237945D100FC85D7 /* GameResultTableViewController.swift */; };
 		C37058A6237A295700FC85D7 /* Pacifico.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C37058A4237A294B00FC85D7 /* Pacifico.ttf */; };
+		C37058A9237A49C200FC85D7 /* UITableView+utill.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37058A8237A49C200FC85D7 /* UITableView+utill.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		C37058A023793AEE00FC85D7 /* GameHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		C37058A2237945D100FC85D7 /* GameResultTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResultTableViewController.swift; sourceTree = "<group>"; };
 		C37058A4237A294B00FC85D7 /* Pacifico.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Pacifico.ttf; sourceTree = "<group>"; };
+		C37058A8237A49C200FC85D7 /* UITableView+utill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+utill.swift"; sourceTree = "<group>"; };
 		CE0C67EECD4A29D08F0D2612 /* Pods-PokerTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokerTest.release.xcconfig"; path = "Target Support Files/Pods-PokerTest/Pods-PokerTest.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,6 +110,7 @@
 		C327261A23752F9300B4E368 /* PokerTest */ = {
 			isa = PBXGroup;
 			children = (
+				C37058A7237A49A900FC85D7 /* Util */,
 				C32726372375307000B4E368 /* Game */,
 				C327261B23752F9300B4E368 /* AppDelegate.swift */,
 				C327263A2375371A00B4E368 /* ViewControllers */,
@@ -163,6 +166,14 @@
 				C37058A4237A294B00FC85D7 /* Pacifico.ttf */,
 			);
 			path = font;
+			sourceTree = "<group>";
+		};
+		C37058A7237A49A900FC85D7 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				C37058A8237A49C200FC85D7 /* UITableView+utill.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,6 +301,7 @@
 				C327261C23752F9300B4E368 /* AppDelegate.swift in Sources */,
 				C327261E23752F9300B4E368 /* SceneDelegate.swift in Sources */,
 				C370589F23793AB000FC85D7 /* GameHistoryTableViewController.swift in Sources */,
+				C37058A9237A49C200FC85D7 /* UITableView+utill.swift in Sources */,
 				C3272643237546A800B4E368 /* GameTableViewController.swift in Sources */,
 				C37058A123793AEE00FC85D7 /* GameHistoryTableViewCell.swift in Sources */,
 				C32726452375471B00B4E368 /* GameTableViewCell.swift in Sources */,

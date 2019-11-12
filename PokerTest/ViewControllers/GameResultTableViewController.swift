@@ -31,6 +31,7 @@ class GameResultTableViewController: UITableViewController {
         NotificationCenter.default.addObserver(forName: .onGamePlayFinishNotification, object: nil, queue: nil) { [weak self] (_) in
             self?.tableView.reloadData()
         }
+        title = "game results"
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -61,4 +62,16 @@ class GameResultTableViewController: UITableViewController {
                 
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let value = values[indexPath.row]
+        performSegue(withIdentifier: "openHistory", sender: value)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? GameHistoryTableViewController {
+            vc.gameResult = sender as? GameModel.CardValue
+        }
+    }
+    
 }
