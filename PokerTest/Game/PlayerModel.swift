@@ -29,8 +29,8 @@ class PlayerModel: Object {
     
     func betting() {
         var bettingMoney:Int {
-            let MIN = 100
-            let MAX = 1000
+            let MIN = 1000
+            let MAX = 10000
             let count = games.count
             if count < 6 {
                 return MIN
@@ -52,10 +52,10 @@ class PlayerModel: Object {
                 }
             }
             if ref > 0 {
-                money += 100
+                money += 1000
             }
             else {
-                money -= 100
+                money -= 1000
             }
             if money < MIN {
                 return MIN
