@@ -52,10 +52,10 @@ class PlayerModel: Object {
                 }
             }
             if ref > 0 {
-                money += 1000
+                money += MIN
             }
             else if ref < 0 {
-                money -= 1000
+                money -= MIN
             }
             
             if money < MIN {
