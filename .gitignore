@@ -1,3 +1,4 @@
 *.xcworkspacedata
 PokerTest.xcworkspace/xcshareddata
 PokerTest.xcworkspace/xcuserdata/changyulseo.xcuserdatad/xcdebugger
+Podfile.lock
