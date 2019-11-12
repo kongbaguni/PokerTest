@@ -72,10 +72,10 @@ class GameHistoryTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! GameHistoryTableViewCell
         let id = data?[indexPath.row].id
-        cell.gameId = id
         if gameResult != nil {
             cell.dack.isNeedDisplayPlayerName = true
         }
+        cell.gameId = id
         return cell
     }
     

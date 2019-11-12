@@ -83,9 +83,10 @@ class CardDackView : UIView {
         imageView4.image = images[3]
         imageView5.image = images[4]
         if isNeedDisplayPlayerName {
-            valueLabel.text = " \(game.player?.name ?? "") : \(game.cardsPoint)"
+            valueLabel.text = " \(game.player?.name ?? Dealer.shared.dealer!.name) : \(game.cardsPoint)"
+        } else {
+            valueLabel.text = " \(game.gameResultValueString) \(game.cardsPoint)"
         }
-        valueLabel.text = " \(game.gameResultValueString) \(game.cardsPoint)"
         dateLabel.text = DateFormatter.localizedString(from: game.regDT, dateStyle: .full, timeStyle: .short)
         }
             
