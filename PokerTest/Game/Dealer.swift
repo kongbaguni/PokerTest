@@ -231,7 +231,6 @@ class Dealer {
     /** 카드 뽑는다.*/
     func popCard(cardNumber:Int)->[Card] {
         if dack.count < cardNumber {
-            print("shuffle --------")
             dack.removeAll()
             insertCard()
         }
@@ -244,9 +243,7 @@ class Dealer {
         var out = ""
         for c in result {
             out += c.stringValue + " "
-        }
-        print(out)
-        
+        }        
         return result
     }
 }
